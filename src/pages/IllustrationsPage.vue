@@ -1,6 +1,6 @@
 <template>
   <q-page class="page-container">
-    <q-list>
+    <q-list class="illustration">
       <div class="illu-cont">
         <IllustrationView
           v-for="illustra in illustrationList"
