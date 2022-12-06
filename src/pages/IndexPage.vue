@@ -2,18 +2,22 @@
   <q-page class="flex column justify-center page-container">
     <q-card class="presentation-card q-mb-xl">
       <q-card-section class="q-ma-md">
+        <!-- Début du titre -->
         <div class="text-h3 text-weight-light">Bonjour,</div>
+        <!--  texte le plus gros -->
         <div class="text-h2 text-weight-light q-ml-xl">
           Je suis Gustave Choutri
         </div>
+        <!--  Fin titre -->
       </q-card-section>
-
+      <!--  Description -->
       <q-card-section class="description text-h5"
         >Illustrateur et Graphiste de niveau licence et je vous souhaite une
         bonne visite sur StudioChoutri.com jeter un œil sur mon site pour
         découvrir mes projets !</q-card-section
       >
 
+      <!--  Icones (Insta, Mail, phone, geoloc) -->
       <q-card-section class="find-me flex row q-ml-xl">
         <div class="location q-pa-md">
           <q-icon name="location_on" class="q-pl-md" />
@@ -47,7 +51,7 @@
     >
       Some of my Illustrations
     </div>
-
+    <!--  Carousel -->
     <div>
       <q-carousel
         arrows
@@ -57,13 +61,21 @@
         autoplay
         infinite
       >
+        <!--  Slide carousel
+          name doit suivre first, second, third, etc.
+          img-src pour image source demande le chemin jusqu'au fichier
+          Logiquement tu n'as besoin de mettre que "/illustrations/nom.du.fichier.extension"
+         -->
         <q-carousel-slide
           name="first"
           img-src="/illustrations/Bembul_the_Hell_King.jpg"
         >
+          <!-- Nom de la slide  -->
+          <!-- Si non voulu, supprimer d'ici -->
           <div class="absolute-bottom custom-caption">
             <div class="text-h2 img-title">Bembul the Hell King</div>
           </div>
+          <!-- à la -->
         </q-carousel-slide>
 
         <q-carousel-slide

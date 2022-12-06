@@ -1,5 +1,12 @@
 <template>
-  <q-img class="illustration" :src="image" fit="cover" />
+  <q-card class="my-card" flat bordered>
+    <q-img class="illustration" :src="image" fit="cover" />
+
+    <q-card-section>
+      <div class="text-h6">{{ title }}</div>
+      <div class="text-subtitle2">{{ description }}</div>
+    </q-card-section>
+  </q-card>
 </template>
 
 <script>
@@ -30,8 +37,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-.illustration {
-  width: 50%;
-  height: 50%;
+.my-card {
+  width: 100%;
+  max-width: 1050px;
 }
 </style>

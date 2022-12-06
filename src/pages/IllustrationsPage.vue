@@ -15,53 +15,14 @@
 <script>
 import { defineComponent } from "vue";
 import IllustrationView from "components/IllustrationView.vue";
-
+// Liste des illustrations
 const illustrationList = [
   {
+    // Pour faire du copier coller c'est d'ici
     title: "Beambul the Hell King",
     description: "You shouldn't done this shit",
-    image: "illustrations/Bembul_the_Hell_King.jpg",
-  },
-  {
-    title: "Thallasorus Rex",
-    description: "A really big fish who's hungry",
-    image: "illustrations/Thallasorus_Rex.png",
-  },
-  {
-    title: "Beambul the Hell King",
-    description: "You shouldn't done this shit",
-    image: "illustrations/Bembul_the_Hell_King.jpg",
-  },
-  {
-    title: "Thallasorus Rex",
-    description: "A really big fish who's hungry",
-    image: "illustrations/Thallasorus_Rex.png",
-  },
-  {
-    title: "Beambul the Hell King",
-    description: "You shouldn't done this shit",
-    image: "illustrations/Bembul_the_Hell_King.jpg",
-  },
-  {
-    title: "Thallasorus Rex",
-    description: "A really big fish who's hungry",
-    image: "illustrations/Thallasorus_Rex.png",
-  },
-  {
-    title: "Beambul the Hell King",
-    description: "You shouldn't done this shit",
-    image: "illustrations/Bembul_the_Hell_King.jpg",
-  },
-  {
-    title: "Thallasorus Rex",
-    description: "A really big fish who's hungry",
-    image: "illustrations/Thallasorus_Rex.png",
-  },
-  {
-    title: "Beambul the Hell King",
-    description: "You shouldn't done this shit",
-    image: "illustrations/Bembul_the_Hell_King.jpg",
-  },
+    image: "illustrations/Bembul_the_Hell_King.jpg", // les 2 propriétés d'avant son évidente, comme d'hab ici c'est ton chemin
+  }, // à la virgule comprise
   {
     title: "Thallasorus Rex",
     description: "A really big fish who's hungry",
@@ -89,10 +50,10 @@ export default defineComponent({
 
   .illu-cont {
     display: flex;
-    flex-wrap: wrap;
-    .illustration {
-      position: relative;
-      height: 530px;
+    flex-direction: column;
+    align-items: center;
+    .my-card {
+      margin: 20px;
     }
   }
 }
