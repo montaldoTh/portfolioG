@@ -39,7 +39,6 @@ export default defineComponent({
 .page-container {
   background: rgb(210, 210, 210);
   h1,
-  h2,
   h3,
   h4,
   h5,
@@ -55,9 +54,9 @@ export default defineComponent({
     width: 100%;
     height: 100%;
     filter: brightness(0.4);
-    position: relative;
+    position: absolute;
     z-index: 0;
-    bottom: 700px;
+    top: 170px;
   }
   .text-h4 {
     padding: 150px 40px;

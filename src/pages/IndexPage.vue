@@ -1,101 +1,113 @@
 <template>
-  <q-page class="flex column justify-center page-container">
-    <q-card class="presentation-card q-mb-xl">
-      <q-card-section class="q-ma-md">
-        <!-- Début du titre -->
-        <div class="text-h3 text-weight-light">Bonjour,</div>
-        <!--  texte le plus gros -->
-        <div class="text-h2 text-weight-light q-ml-xl">
-          Je suis Gustave Choutri
-        </div>
-        <!--  Fin titre -->
-      </q-card-section>
-      <!--  Description -->
-      <q-card-section class="description text-h5"
-        >Illustrateur et Graphiste de niveau licence et je vous souhaite une
-        bonne visite sur StudioChoutri.com jeter un œil sur mon site pour
-        découvrir mes projets !</q-card-section
-      >
-
-      <!--  Icones (Insta, Mail, phone, geoloc) -->
-      <q-card-section class="find-me flex row q-ml-xl">
+  <q-page class="flex column page-container">
+    <div class="title-cont">
+      <h1 class="text-h2 text-p1">Bonjour,</h1>
+      <p class="text-h4 text-p2">Gustave Choutri, votre humbre illustrateur.</p>
+      <p class="text-h5 text-p3">graphisme, infographie, illustrations,</p>
+      <p class="text-h5 text-p3">
+        Je suis disponible pour toute vos commisions,
+      </p>
+      <p class="text-h5 text-p4">
+        Veuillez me contacter par l'un des moyens de contact, présent ci dessous
+        ou dans la page contact.
+      </p>
+    </div>
+    <q-card dark bordered class="bg-grey-9 my-card flex row">
+      <q-card-section>
         <div class="location q-pa-md">
-          <q-icon name="location_on" class="q-pl-md" />
+          <q-icon name="location_on" class="icon q-pl-md" />
           <div class="text-overline">Paris, France</div>
         </div>
-
+      </q-card-section>
+      <q-separator vertical dark inset />
+      <q-card-section>
         <div class="instagram q-pa-md">
-          <q-icon name="ion-logo-instagram" class="q-pl-md" />
-          <div class="text-overline">@lordoftempest</div>
+          <q-icon name="ion-logo-instagram" class="icon q-pl-md" />
+          <br />
+          <a
+            href="https://www.instagram.com/lordoftempest/"
+            target="_blank"
+            class="text-overline"
+            >@lordoftempest</a
+          >
         </div>
-
-        <div class="mail q-pa-md">
-          <q-icon name="mail" class="q-pl-md" />
-          <div class="text-overline">gchoutri@unknow.idk</div>
-        </div>
-
+      </q-card-section>
+      <q-separator vertical dark inset />
+      <q-card-section>
         <div class="linkedin q-pa-md">
-          <q-icon name="ion-logo-linkedin" class="q-pl-md" />
-          <div class="text-overline">@choutri.gus</div>
+          <q-icon name="ion-logo-linkedin" class="icon q-pl-md" />
+          <br />
+          <a
+            href="https://www.linkedin.com/in/gustave-choutri-852b8b1b1/"
+            target="_blank"
+            class="text-overline"
+            >@gustave.choutri</a
+          >
         </div>
-
+      </q-card-section>
+      <q-separator vertical dark inset />
+      <q-card-section>
+        <div class="discord q-pa-md">
+          <q-icon name="fa-brands fa-discord" class="icon q-pl-md" />
+          <div class="text-overline">Lord of Tempests#9620</div>
+        </div>
+      </q-card-section>
+      <q-separator vertical dark inset />
+      <q-card-section>
         <div class="phone q-pa-md">
-          <q-icon name="phone" class="q-pl-md" />
-          <div class="text-overline">06.54.32.10.12</div>
+          <q-icon name="fa-solid fa-phone" class="icon q-pl-md" />
+          <div class="text-overline">+337.52.67.93.45</div>
         </div>
       </q-card-section>
     </q-card>
 
-    <div
-      class="project-title relative-position text-h2 text-italic text-capitalize q-mt-xl q-mb-lg q-ml-xl"
-    >
-      Some of my Illustrations
-    </div>
-    <!--  Carousel -->
-    <div>
-      <q-carousel
-        arrows
-        animated
-        v-model="slide"
-        height="950px"
-        autoplay
-        infinite
-      >
-        <!--  Slide carousel
-          name doit suivre first, second, third, etc.
-          img-src pour image source demande le chemin jusqu'au fichier
-          Logiquement tu n'as besoin de mettre que "/illustrations/nom.du.fichier.extension"
-         -->
-        <q-carousel-slide
-          name="first"
-          img-src="/illustrations/Bembul_the_Hell_King.jpg"
+    <q-card class="my-carousel" flat bordered>
+      <q-card-section>
+        <q-carousel
+          swipeable
+          animated
+          autoplay
+          arrows
+          height="850px"
+          v-model="slide"
+          v-model:fullscreen="fullscreen"
+          infinite
         >
-          <!-- Nom de la slide  -->
-          <!-- Si non voulu, supprimer d'ici -->
-          <div class="absolute-bottom custom-caption">
-            <div class="text-h2 img-title">Bembul the Hell King</div>
-          </div>
-          <!-- à la -->
-        </q-carousel-slide>
+          <q-carousel-slide
+            :name="1"
+            img-src="public/illustrations/Bembul_the_Hell_King.jpg"
+          />
+          <q-carousel-slide
+            :name="2"
+            img-src="public/illustrations/img-gus.jpg"
+          />
+          <q-carousel-slide
+            :name="3"
+            img-src="public/illustrations/Thallasorus_Rex.png"
+          />
 
-        <q-carousel-slide
-          name="second"
-          img-src="/illustrations/Thallasorus_Rex.png"
-        >
-          <div class="absolute-bottom custom-caption">
-            <div class="text-h2 img-title">Thallasorus Rex</div>
-          </div>
-        </q-carousel-slide>
+          <template v-slot:control>
+            <q-carousel-control position="top-right" :offset="[18, 18]">
+              <q-btn
+                push
+                round
+                dense
+                color="white"
+                text-color="primary"
+                :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
+                @click="fullscreen = !fullscreen"
+              />
+            </q-carousel-control>
+          </template>
+        </q-carousel>
+      </q-card-section>
+    </q-card>
 
-        <q-carousel-slide
-          name="third"
-          img-src="/illustrations/Thallasorus_Rex.png"
-        >
-          <div class="absolute-bottom custom-caption">
-            <div class="text-h2 img-title">Thallasorus Rex</div>
-          </div>
-        </q-carousel-slide>
-      </q-carousel>
+    <div class="illu-title flex column justify-evenly items-center">
+      <p class="text-h4">Voici</p>
+      <p class="text-h4">quelques-unes</p>
+      <p class="text-h4">de mes</p>
+      <p class="text-h4">illustrations</p>
     </div>
   </q-page>
 </template>
@@ -107,7 +119,8 @@ export default defineComponent({
   name: "IndexPage",
   setup() {
     return {
-      slide: ref("first"),
+      slide: ref(1),
+      fullscreen: ref(false),
     };
   },
 });
@@ -116,24 +129,52 @@ export default defineComponent({
 <style lang="scss" scoped>
 .page-container {
   background: rgb(210, 210, 210);
-
-  .presentation-card {
-    width: 100%;
-    height: 50vh;
-    .description {
-      margin-left: 110px;
-      margin-right: 110px;
+  overflow-x: hidden;
+  .title-cont {
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    margin: 60px 0 40px 250px;
+    padding: 50px;
+    border-radius: 20px;
+    p {
+      margin: 30px 0;
     }
-
-    .find-me {
-      justify-content: flex-end;
+    .text-p2 {
+      padding-right: 75px;
+    }
+    .text-p3,
+    .text-p4 {
+      padding-left: 75px;
     }
   }
-  .custom-caption {
-    text-align: center;
-    padding: 25px;
+  .my-card {
+    width: 60%;
+    justify-content: space-evenly;
+    position: relative;
+    bottom: 85px;
+    left: 450px;
+  }
+
+  .text-overline {
     color: white;
-    background-color: rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+  }
+  .my-carousel {
+    width: 70%;
+    margin: 0 0 10px 50px;
+  }
+
+  .illu-title {
+    width: 380px;
+    height: 350px;
+    position: absolute;
+    bottom: 400px;
+    right: 80px;
+    background-color: rgb(130, 130, 130);
+    padding: 45px;
+    border-radius: 25px;
+    color: white;
   }
 }
 </style>

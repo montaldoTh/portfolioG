@@ -5,10 +5,10 @@
     style="height: 100vh"
     class="layout shadow-2"
   >
-    <q-header elevated>
+    <q-header elevated class="header">
       <q-toolbar>
         <q-toolbar-title class="header-title">
-          <a href="/">Gustave Choutri</a>
+          <a href="/">Studio Choutri</a>
         </q-toolbar-title>
         <div class="navtab">
           <q-tabs>
@@ -68,6 +68,9 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+.header {
+  z-index: 99;
+}
 .header-title a {
   color: white;
   text-decoration: none;

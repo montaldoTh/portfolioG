@@ -1,12 +1,5 @@
 <template>
-  <q-card class="my-card" flat bordered>
-    <q-img class="illustration" :src="image" fit="cover" />
-
-    <q-card-section>
-      <div class="text-h6">{{ title }}</div>
-      <div class="text-subtitle2">{{ description }}</div>
-    </q-card-section>
-  </q-card>
+  <q-img class="illustration" :src="image" fit="cover" />
 </template>
 
 <script>

@@ -32,8 +32,22 @@
             href="https://www.linkedin.com/in/gustave-choutri-852b8b1b1/"
             target="_blank"
             class="text-overline"
-            >@choutri.gus</a
+            >@gustave.choutri</a
           >
+        </div>
+      </q-card-section>
+      <q-separator dark inset />
+      <q-card-section>
+        <div class="discord q-pa-md">
+          <q-icon name="fa-brands fa-discord" class="icon q-pl-md" />
+          <div class="text-overline">Lord of Tempests#9620</div>
+        </div>
+      </q-card-section>
+      <q-separator dark inset />
+      <q-card-section>
+        <div class="phone q-pa-md">
+          <q-icon name="fa-solid fa-phone" class="icon q-pl-md" />
+          <div class="text-overline">+337.52.67.93.45</div>
         </div>
       </q-card-section>
     </q-card>
@@ -41,7 +55,7 @@
     <div class="flex column text-list items-center">
       <div class="text-h5">Vous pouvez me contacté via les réseaux indiqué</div>
       <div class="text-h4">Ou par mail</div>
-      <div class="text-h3">gchoutri@unknow.idk</div>
+      <div class="text-h3">choutrigustave@gmail.com</div>
     </div>
   </q-page>
 </template>
@@ -66,8 +80,9 @@ export default defineComponent({
   }
   .my-card {
     position: relative;
+    width: 175px;
     right: 150px;
-    top: 190px;
+    top: 100px;
   }
   .text-list div {
     margin-top: 15px;
