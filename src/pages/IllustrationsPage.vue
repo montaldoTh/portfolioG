@@ -1,6 +1,6 @@
 <template>
   <q-page class="page-container flex column">
-    <h1>Voici les illustrations que j'ai réalisé</h1>
+    <h1 class="text-h2 q-ma-xl">Voici les illustrations que j'ai réalisé</h1>
     <div class="gallery-cont">
       <IllustrationView
         v-for="illustra in illustrationList"
@@ -16,21 +16,32 @@
 
     <q-dialog v-model="imgFullscreen" full-width class="popup-container">
       <q-card class="popup">
-        <q-card-section class="q-pa-xs popup_content">
+        <q-card-section class="q-pa-xs popup_content bg-black">
           <q-img
             :src="illustrationList[actualImg].image"
             class="popup_content_img"
             fit="contain"
             :ratio="16 / 9"
             height="885px"
-          />
+          >
+            <div class="absolute-bottom text-h3 text-center">
+              {{ illustrationList[actualImg].title }}
+
+              <div class="text-subtitle1 text-center">
+                {{ illustrationList[actualImg].description }}
+              </div>
+            </div>
+          </q-img>
         </q-card-section>
 
-        <q-card-actions align="right" class="popup_action absolute-top-right">
+        <q-card-actions
+          align="right"
+          class="popup_action absolute-top-right popup_content_img_subtitle"
+        >
           <q-btn
             flat
             label="X"
-            color="black"
+            color="white"
             class="popup_action_btn"
             v-close-popup
           />
@@ -107,12 +118,9 @@ export default defineComponent({
     }
   }
   .popup-container {
-    background-color: rgba(0, 0, 0, 0.9);
     z-index: 100;
-    .popup {
-      &_content {
-        overflow: hidden;
-      }
+    .popup .popup_content .popup_content_img .popup_content_img_subtitle {
+      margin: 0 10px;
     }
   }
 }

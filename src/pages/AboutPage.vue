@@ -3,10 +3,17 @@
     <h2>Un jeune Illustrateur talentueux</h2>
     <div class="grid">
       <div class="row">
-        <div class="text-h4 col-8">
+        <div class="text-h4 col-6 fPart">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque,
           voluptas ducimus quae ea culpa sapiente? Eos doloremque recusandae a
           odio asperiores quo, quis quos aut, id nam cupiditate quidem facilis?
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5">
+          <q-img src="public/img//monke.jpg" class="picture"></q-img>
+        </div>
+        <div class="badge">
+          <p class="text-subtitle2">C'est moi</p>
         </div>
       </div>
       <div class="row">
@@ -15,15 +22,13 @@
       </div>
       <div class="row tRow">
         <div class="col-4"></div>
-        <div class="text-h4 col-8">
+        <div class="text-h4 col-8 sPart">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque,
           voluptas ducimus quae ea culpa sapiente? Eos doloremque recusandae a
           odio asperiores quo, quis quos aut, id nam cupiditate quidem facilis?
         </div>
       </div>
     </div>
-
-    <img src="illustrations/Thallasorus_Rex.png" alt="" class="background" />
   </q-page>
 </template>
 
@@ -38,15 +43,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .page-container {
   background: rgb(210, 210, 210);
-  h1,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  .text-h4 {
-    color: white;
-  }
+
   * {
     z-index: 1;
   }
@@ -60,16 +57,33 @@ export default defineComponent({
   }
   .text-h4 {
     padding: 150px 40px;
-    color: rgba(255, 255, 255, 0.808);
   }
 
   .tRow .text-h4 {
     padding: 40px;
   }
   .picture {
-    border-radius: 50%;
-    width: 10%;
-    height: 10%;
+    width: 80%;
+    position: relative;
+    top: 70px;
+    border-radius: 10px;
+  }
+
+  .badge {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px 15px 0 15px;
+    right: 740px;
+    top: 250px;
+    box-shadow: 3 black;
+  }
+
+  .sPart {
+    background-color: #fff;
+    border-radius: 15px;
+    position: relative;
+    left: 10px;
   }
 }
 </style>

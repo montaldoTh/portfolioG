@@ -25,7 +25,7 @@
       </q-toolbar>
     </q-header>
 
-    <q-page-container>
+    <q-page-container class="container">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -79,5 +79,8 @@ export default defineComponent({
   transition: color 0.3s, background-color 0.3s;
   white-space: nowrap;
   color: inherit;
+}
+.container {
+  overflow-x: hidden;
 }
 </style>

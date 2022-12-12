@@ -1,11 +1,12 @@
 <template>
-  <q-page class="flex flex-center page-container">
+  <q-page class="flex page-container">
     <q-list>
       <div class="proj-cont">
         <ProjectView
           v-for="project in projectList"
           :key="project.id"
           v-bind="project"
+          class="project"
         />
       </div>
     </q-list>
@@ -27,28 +28,13 @@ const projectList = [
       // Toutes les images du projet, si tu veux en rajouter c'est ici
       {
         id: 1, // Je renvoie a au-dessus
-        title: "Beambul the Hell King",
-        path: "illustrations/Bembul_the_Hell_King.jpg", //Lien du chemin vers ton images
-      },
-      {
-        id: 2,
         title: "Thallasorus Rex",
         path: "illustrations/Thallasorus_Rex.png",
       },
       {
-        id: 3,
-        title: "Thallasorus Rex",
-        path: "illustrations/building-1.svg",
-      },
-      {
-        id: 4,
-        title: "Thallasorus Rex",
-        path: "illustrations/building-2.svg",
-      },
-      {
-        id: 5,
-        title: "Thallasorus Rex",
-        path: "illustrations/logo avec nom.svg",
+        id: 2,
+        title: "Beambul the Hell King",
+        path: "illustrations/Bembul_the_Hell_King.jpg", //Lien du chemin vers ton images
       },
     ],
   },
@@ -90,5 +76,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .page-container {
   background: rgb(210, 210, 210);
+  // .project {
+  //   margin: 100px 0;
+  // }
 }
 </style>

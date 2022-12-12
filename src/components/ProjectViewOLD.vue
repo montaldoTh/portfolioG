@@ -11,6 +11,7 @@
       thumbnails
       infinite
       autoplay
+      v-model:fullscreen="fullscreen"
       class="my-carousel"
     >
       <q-carousel-slide
@@ -19,6 +20,17 @@
         :name="index + 1"
         :img-src="image.path"
       />
+      <template v-slot:control>
+        <q-carousel-control position="top-right" :offset="[18, 18]">
+          <q-btn
+            push
+            round
+            dense
+            :icon="fullscreen ? 'fullscreen_exit' : 'fullscreen'"
+            @click="fullscreen = !fullscreen"
+          />
+        </q-carousel-control>
+      </template>
     </q-carousel>
 
     <div class="desc-cont text-subtitle1">
@@ -55,6 +67,7 @@ export default defineComponent({
       slide: ref(1),
       expanded: ref(false),
       autoplay: ref(true),
+      fullscreen: ref(false),
     };
   },
 });
