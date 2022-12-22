@@ -8,6 +8,7 @@
       swipeable
       animated
       v-model="slide"
+      v-model:fullscreen="fullscreen"
       thumbnails
       infinite
       autoplay
@@ -55,6 +56,7 @@ export default defineComponent({
       slide: ref(1),
       expanded: ref(false),
       autoplay: ref(true),
+      fullscreen: ref(false),
     };
   },
 });

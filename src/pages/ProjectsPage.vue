@@ -1,15 +1,18 @@
 <template>
   <q-page class="flex page-container">
-    <q-list>
-      <div class="proj-cont">
-        <ProjectView
-          v-for="project in projectList"
-          :key="project.id"
-          v-bind="project"
-          class="project"
-        />
-      </div>
-    </q-list>
+    <div class="proj-cont">
+      <ProjectView
+        v-for="project in projectList"
+        :key="project.id"
+        v-bind="project"
+        class="project"
+        @click="
+          imgFullscreen = true;
+          actualProj = project.id - 1;
+          actualImg = project.images.id;
+        "
+      />
+    </div>
   </q-page>
 </template>
 <script>
@@ -76,8 +79,5 @@ export default defineComponent({
 <style lang="scss" scoped>
 .page-container {
   background: rgb(210, 210, 210);
-  // .project {
-  //   margin: 100px 0;
-  // }
 }
 </style>
